@@ -9,10 +9,12 @@ class CustomTextFormFailed extends StatelessWidget {
   bool obscureText;
 
   CustomTextFormFailed(
-      {required this.text,
+      {Key? key,
+      required this.text,
       this.onChang,
       this.obscureText = false,
-      this.iconData});
+      this.iconData})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return TextFormField(

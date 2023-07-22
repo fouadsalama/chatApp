@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:scholar_chat/constants.dart';
 import 'package:scholar_chat/cubits/chat_cubit/chat_cubit.dart';
-import 'package:scholar_chat/models/message.dart';
 
-import '../widgets/chat_buble.dart';
+import '../widgets/chat_bubble.dart';
 
 class ChatPage extends StatelessWidget {
   static String id = 'ChatPage';
@@ -19,23 +18,15 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var email = ModalRoute.of(context)!.settings.arguments;
 
-    // return StreamBuilder<QuerySnapshot>(
-    //   stream: messages.orderBy(KCreatedAt, descending: true).snapshots(),
-    //   builder: (context, snapshot) {
-    //     if (snapshot.hasData) {
-    //       List<Message> messagesList = [];
-    //       for (int i = 0; i < snapshot.data!.docs.length; i++) {
-    //         messagesList.add(Message.fromJson(snapshot.data!.docs[i]));
-    //       }
-
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: kPrimaryColor,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              KLogo,
+              kLogo,
               height: 50,
             ),
             const Text('Chat'),
